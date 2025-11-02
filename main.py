@@ -49,6 +49,11 @@ class Record:
         if found_phone:
             return found_phone
 
+    def remove_phone(self, number):
+        for phone_obj in self.phones:
+            if phone_obj.value == number:
+                self.phones.remove(phone_obj)
+
     def __str__(self):
         return f"Contact name: {self.name.value}, phones: {'; '.join(p.value for p in self.phones)}"
 
